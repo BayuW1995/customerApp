@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <View
+        android:id="@+id/v_line"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/line_size1"
+        android:layout_marginBottom="@dimen/modul_margin_tanggung"
+        android:background="@drawable/ic_line" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/v_line"
+        android:layout_marginBottom="@dimen/modul_margin_default"
+        android:orientation="vertical"
+        android:paddingLeft="@dimen/modul_margin_default"
+        android:paddingRight="@dimen/modul_margin_default"
+        android:paddingBottom="@dimen/modul_margin_default">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:weightSum="1">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="@dimen/modul_margin_small"
+                android:layout_weight="0.4"
+                android:text="IP Perangkat"
+                android:textColor="@color/md_black_1000"
+                android:textSize="@dimen/menu_text_size" />
+
+           <!-- <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="@dimen/modul_margin_small"
+                android:layout_weight="0.6"
+                android:text="Nama Perangkat"
+                android:textColor="@color/md_black_1000"
+                android:textSize="@dimen/menu_text_size" />-->
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/modul_margin_small"
+            android:orientation="horizontal"
+            android:weightSum="1">
+
+            <TextView
+                android:id="@+id/tv_ip_perangkat_user_accessed"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="@dimen/modul_margin_small"
+                android:layout_weight="0.4"
+                android:text=""
+                android:textColor="@color/color_black" />
+
+           <!-- <TextView
+                android:id="@+id/tv_item2"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="@dimen/modul_margin_small"
+                android:layout_weight="0.6"
+                android:text=""
+                android:textColor="@color/color_black" />-->
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/modul_margin_small"
+            android:orientation="horizontal"
+            android:weightSum="1">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="@dimen/modul_margin_small"
+                android:layout_weight="0.4"
+                android:text="IP Tujuan"
+                android:textColor="@color/md_black_1000"
+                android:textSize="@dimen/menu_text_size" />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="@dimen/modul_margin_small"
+                android:layout_weight="0.3"
+                android:text="Traffic Upload"
+                android:textColor="@color/md_black_1000"
+                android:textSize="@dimen/menu_text_size" />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.3"
+                android:text="Traffic Download"
+                android:textColor="@color/md_black_1000"
+                android:textSize="@dimen/menu_text_size" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/modul_margin_small"
+            android:orientation="horizontal"
+            android:weightSum="1">
+
+            <TextView
+                android:id="@+id/tv_ip_tujuan_user_accessed"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="@dimen/modul_margin_small"
+                android:layout_weight="0.4"
+                android:textColor="@color/color_black" />
+
+            <TextView
+                android:id="@+id/tv_traffic_upload_user_accessed"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="@dimen/modul_margin_small"
+                android:layout_weight="0.3"
+                android:textColor="@color/color_black" />
+
+            <TextView
+                android:id="@+id/tv_traffic_download_user_accessed"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.3"
+                android:textColor="@color/color_black" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/modul_margin_small"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Hostname"
+                android:textColor="@color/color_black"
+                android:textSize="14sp" />
+
+            <TextView
+                android:id="@+id/tv_hostname_user_accessed"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/modul_margin_small"
+                android:textColor="@color/color_black"
+                android:textSize="14sp" />
+        </LinearLayout>
+    </LinearLayout>
+
+</RelativeLayout>

@@ -1,0 +1,395 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainTicket.Fragment.MenuComplaint.MainComplaint">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:id="@+id/ll_header"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/modul_margin_tanggung"
+                android:gravity="center"
+                android:orientation="horizontal"
+                android:weightSum="1">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.25"
+                    android:gravity="center"
+                    android:text="History"
+                    android:textColor="@color/color_black" />
+
+                <LinearLayout
+                    android:id="@+id/ll_date"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.75"
+                    android:gravity="center"
+                    android:orientation="horizontal"
+                    android:weightSum="2">
+
+                    <TextView
+                        android:id="@+id/tv_date1"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.8"
+                        android:gravity="center"
+                        android:text=""
+                        android:textColor="@color/color_black" />
+
+                    <ImageView
+                        android:id="@+id/iv_date1"
+                        android:layout_width="@dimen/icon_size0"
+                        android:layout_height="@dimen/icon_size0"
+                        android:src="@drawable/kalendericon" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/modul_margin_default"
+                        android:text="-"
+                        android:textColor="@color/color_black" />
+
+                    <TextView
+                        android:id="@+id/tv_date2"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.8"
+                        android:gravity="center"
+                        android:text=""
+                        android:textColor="@color/color_black" />
+
+                    <ImageView
+                        android:id="@+id/iv_date2"
+                        android:layout_width="@dimen/icon_size0"
+                        android:layout_height="@dimen/icon_size0"
+                        android:src="@drawable/kalendericon" />
+
+                </LinearLayout>
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/line_size2"
+                android:layout_below="@id/ll_date"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/ic_line" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_below="@id/ll_header"
+                android:layout_marginTop="@dimen/modul_margin_tanggung"
+                android:orientation="vertical">
+
+                <ListView
+                    android:id="@+id/LvTicketComplaint"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:divider="@color/color_trasnparent"
+                    android:visibility="gone" />
+
+                <ImageView
+                    android:id="@+id/imageNoDataComplaint"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:src="@drawable/icon_no_data"
+                    android:visibility="visible" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="top"
+                    android:orientation="vertical"
+                    android:weightSum="10">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="8.5">
+
+                        <TextView
+                            android:id="@+id/txtNoDataComplaint"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentBottom="true"
+                            android:layout_centerHorizontal="true"
+                            android:text="Belum Ada Histori Complaint"
+                            android:textColor="#000000"
+                            android:textSize="18sp"
+                            android:textStyle="bold"
+                            android:visibility="visible" />
+                    </RelativeLayout>
+                </LinearLayout>
+            </RelativeLayout>
+        </LinearLayout>
+
+        <android.support.design.widget.FloatingActionButton
+            android:id="@+id/btnAddTicketKomplain"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentBottom="true"
+            android:layout_margin="@dimen/fab_margin"
+            android:src="@drawable/icon_tambah_ticket"
+            app:backgroundTint="@color/color_white" />
+    </RelativeLayout>
+
+</FrameLayout><!--<LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/line_size2"
+                    android:background="@drawable/ic_line"
+                    android:layout_marginBottom="@dimen/modul_margin_default"/>
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:paddingLeft="@dimen/modul_margin_big"
+                    android:paddingRight="@dimen/modul_margin_big"
+                    android:paddingTop="@dimen/modul_margin_default"
+                    android:paddingBottom="@dimen/modul_margin_default"
+                    android:layout_marginBottom="@dimen/modul_margin_default"
+                    android:gravity="center"
+                    android:weightSum="1">
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_weight="0.75"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="13 Desember 2018"
+                            android:textStyle="bold"
+                            android:textColor="@color/color_black"/>
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Keluar capcha saat browsing site setos"
+                            android:textColor="@color/color_black"/>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_weight="0.25"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:gravity="center">
+
+                        <ImageView
+                            android:layout_width="@dimen/icon_size0"
+                            android:layout_height="@dimen/icon_size0"
+                            android:src="@drawable/ic_on_progres"/>
+                    </LinearLayout>
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/line_size2"
+                    android:background="@drawable/ic_line"
+                    android:layout_marginBottom="@dimen/modul_margin_default"/>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:paddingLeft="@dimen/modul_margin_big"
+                    android:paddingRight="@dimen/modul_margin_big"
+                    android:paddingTop="@dimen/modul_margin_default"
+                    android:paddingBottom="@dimen/modul_margin_default"
+                    android:layout_marginBottom="@dimen/modul_margin_default"
+                    android:gravity="center"
+                    android:weightSum="1">
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_weight="0.75"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="13 Desember 2018"
+                            android:textStyle="bold"
+                            android:textColor="@color/color_black"/>
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Susah koneksi ke wifi"
+                            android:textColor="@color/color_black"/>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_weight="0.25"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:gravity="center">
+
+                        <ImageView
+                            android:layout_width="@dimen/icon_size0"
+                            android:layout_height="@dimen/icon_size0"
+                            android:src="@drawable/ic_on_progres"/>
+                    </LinearLayout>
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/line_size2"
+                    android:background="@drawable/ic_line"
+                    android:layout_marginBottom="@dimen/modul_margin_default"/>
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:paddingLeft="@dimen/modul_margin_big"
+                    android:paddingRight="@dimen/modul_margin_big"
+                    android:paddingTop="@dimen/modul_margin_default"
+                    android:paddingBottom="@dimen/modul_margin_default"
+                    android:layout_marginBottom="@dimen/modul_margin_default"
+                    android:gravity="center"
+                    android:weightSum="1">
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_weight="0.75"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="12 Desember 2018"
+                            android:textStyle="bold"
+                            android:textColor="@color/color_black"/>
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Koneksi terlalu cepat"
+                            android:textColor="@color/color_black"/>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_weight="0.25"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:gravity="center">
+
+                        <ImageView
+                            android:layout_width="@dimen/icon_size0"
+                            android:layout_height="@dimen/icon_size0"
+                            android:src="@drawable/ic_solve"/>
+                    </LinearLayout>
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/line_size2"
+                    android:background="@drawable/ic_line"
+                    android:layout_marginBottom="@dimen/modul_margin_default"/>
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:paddingLeft="@dimen/modul_margin_big"
+                    android:paddingRight="@dimen/modul_margin_big"
+                    android:paddingTop="@dimen/modul_margin_default"
+                    android:paddingBottom="@dimen/modul_margin_default"
+                    android:layout_marginBottom="@dimen/modul_margin_default"
+                    android:gravity="center"
+                    android:weightSum="1">
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_weight="0.75"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="11 Desember 2018"
+                            android:textStyle="bold"
+                            android:textColor="@color/color_black"/>
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Sinyal wifi tidak terdeteksi setelah terhubung ke AP "
+                            android:textColor="@color/color_black"/>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_weight="0.25"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:gravity="center">
+
+                        <ImageView
+                            android:layout_width="@dimen/icon_size0"
+                            android:layout_height="@dimen/icon_size0"
+                            android:src="@drawable/ic_solve"/>
+                    </LinearLayout>
+                </LinearLayout>
+
+            </LinearLayout>-->

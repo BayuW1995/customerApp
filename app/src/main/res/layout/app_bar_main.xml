@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/color_white"
+    tools:context=".HomeActivity">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:id="@+id/btnPanic"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_marginTop="@dimen/modul_margin_tanggung"
+            android:layout_marginRight="@dimen/modul_margin_tanggung"
+            android:background="@drawable/bcg_panic_btn"
+            android:gravity="center"
+            android:paddingLeft="10dp"
+            android:paddingTop="5dp"
+            android:paddingRight="10dp"
+            android:paddingBottom="5dp"
+            android:text="Panic Button"
+            android:textColor="@color/color_white"
+            android:textSize="12sp" />
+
+        <RelativeLayout
+            android:id="@+id/rl_toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:gravity="center_vertical"
+            android:padding="@dimen/modul_margin_default">
+
+            <ImageView
+                android:id="@+id/iv_menu"
+                android:layout_width="@dimen/icon_size"
+                android:layout_height="@dimen/icon_size"
+                android:background="?attr/selectableItemBackground"
+                android:src="@mipmap/ic_menu" />
+
+            <TextView
+                android:id="@+id/tv_title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="64dp"
+                android:layout_toRightOf="@id/iv_menu"
+                android:paddingLeft="@dimen/modul_margin_default"
+                android:paddingTop="@dimen/modul_margin_tiny"
+                android:paddingRight="@dimen/modul_margin_default"
+                android:paddingBottom="@dimen/modul_margin_small"
+                android:textColor="@color/color_black"
+                android:textSize="20sp" />
+        </RelativeLayout>
+
+        <include
+            layout="@layout/content_main"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@id/rl_toolbar" />
+
+    </RelativeLayout>
+
+</android.support.design.widget.CoordinatorLayout>

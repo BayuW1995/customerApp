@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/line_size2"
+        android:layout_marginBottom="@dimen/modul_margin_default"
+        android:background="@drawable/ic_line" />
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/modul_margin_default"
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:paddingLeft="@dimen/modul_margin_big"
+        android:paddingTop="@dimen/modul_margin_default"
+        android:paddingRight="@dimen/modul_margin_big"
+        android:paddingBottom="@dimen/modul_margin_default"
+        android:weightSum="1">
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.75"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/txtTglMenuComplaint"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="13 Desember 2018"
+                android:textColor="@color/color_black"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/txtDeskripsiMenuComplaint"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Keluar capcha saat browsing site setos"
+                android:textColor="@color/color_black" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.25"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <ImageView
+                android:id="@+id/imgStatusMenuComplaint"
+                android:layout_width="@dimen/icon_size0"
+                android:layout_height="@dimen/icon_size0"
+                android:src="@drawable/ic_on_progres" />
+        </LinearLayout>
+
+    </LinearLayout>
+
+</LinearLayout>

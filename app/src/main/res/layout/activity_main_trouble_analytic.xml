@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/color_white"
+    android:orientation="vertical"
+    tools:context=".MainTroubleAnalytic.MainTroubleAnalytic">
+
+    <include
+        android:id="@+id/v_header"
+        layout="@layout/header"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="18dp"
+        android:layout_marginTop="@dimen/modul_margin_tanggung"
+        android:text="Pilih router : "
+        android:textColor="@color/color_black"
+        android:textSize="14sp" />
+
+    <Spinner
+        android:id="@+id/dropdownPilihRouter"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/modul_margin_tanggung"
+        android:layout_marginTop="@dimen/modul_margin_tanggung">
+
+    </Spinner>
+
+    <LinearLayout
+        android:id="@+id/layoutUtamaTroubleAnalytic"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:visibility="gone">
+
+        <RadioGroup
+            android:id="@+id/rg_tab"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/v_header"
+            android:layout_margin="@dimen/modul_margin_tanggung"
+            android:orientation="horizontal"
+            android:weightSum="3">
+
+            <RadioButton
+                android:id="@+id/rb_tab1"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/radio_hight"
+                android:layout_weight="1"
+                android:background="@drawable/radio_left"
+                android:button="@null"
+                android:gravity="center"
+                android:text="Router Status"
+                android:textColor="@color/radio_color"
+                android:textSize="12sp" />
+
+            <RadioButton
+                android:id="@+id/rb_tab2"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/radio_hight"
+                android:layout_weight="1"
+                android:background="@drawable/radio_mid"
+                android:button="@null"
+                android:gravity="center"
+                android:text="Bandwidth Test"
+                android:textColor="@color/radio_color"
+                android:textSize="12sp" />
+
+            <RadioButton
+                android:id="@+id/rb_tab3"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/radio_hight"
+                android:layout_weight="1"
+                android:background="@drawable/radio_right"
+                android:button="@null"
+                android:gravity="center"
+                android:text="Ping Test"
+                android:textColor="@color/radio_color"
+                android:textSize="12sp" />
+        </RadioGroup>
+
+        <FrameLayout
+            android:id="@+id/fl_container"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@id/rg_tab"
+            app:layout_constraintBottom_toTopOf="@id/navigation"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+    </LinearLayout>
+</LinearLayout>

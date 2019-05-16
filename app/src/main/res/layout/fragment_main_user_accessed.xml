@@ -1,0 +1,200 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainInternetUsage.Fragment.MainUserAccessed.MainUserAccessed">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:id="@+id/ll_date"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/modul_margin_tanggung"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:weightSum="2">
+
+            <TextView
+                android:id="@+id/tv_date1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.75"
+                android:gravity="center"
+                android:text=""
+                android:textColor="@color/color_black" />
+
+            <ImageView
+                android:id="@+id/iv_date1"
+                android:layout_width="@dimen/icon_size0"
+                android:layout_height="@dimen/icon_size0"
+                android:src="@drawable/kalendericon" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/modul_margin_default"
+                android:text="-"
+                android:textColor="@color/color_black" />
+
+            <TextView
+                android:id="@+id/tv_date2"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.75"
+                android:gravity="center"
+                android:text=""
+                android:textColor="@color/color_black" />
+
+            <ImageView
+                android:id="@+id/iv_date2"
+                android:layout_width="@dimen/icon_size0"
+                android:layout_height="@dimen/icon_size0"
+                android:src="@drawable/kalendericon" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/ll_date"
+            android:layout_marginLeft="@dimen/modul_margin_tanggung"
+            android:layout_marginTop="@dimen/modul_margin_tanggung"
+            android:layout_marginRight="@dimen/modul_margin_tanggung"
+            android:layout_marginBottom="@dimen/modul_margin_tanggung"
+            android:orientation="vertical">
+
+            <ListView
+                android:id="@+id/lv_user_accesed"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:scrollbars="none"
+                android:divider="@color/color_trasnparent">
+
+            </ListView>
+            <!--<LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="05:00 PM"
+                    android:textColor="@color/color_black"/>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="https://stackoverflow.com/questions/3576507/is-it-possible-to-change-the-radio-button-icon-in-an-android-radio-button-group?rq=1"
+                    android:textColor="@color/color_black"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginTop="@dimen/modul_margin_tanggung">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="04:30 PM"
+                    android:textColor="@color/color_black"/>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="https://stackoverflow.com/questions/3576507/is-it-possible-to-change-the-radio-button-icon-in-an-android-radio-button-group?rq=1"
+                    android:textColor="@color/color_black"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginTop="@dimen/modul_margin_tanggung">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="04:20 PM"
+                    android:textColor="@color/color_black"/>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="https://stackoverflow.com/questions/3576507/is-it-possible-to-change-the-radio-button-icon-in-an-android-radio-button-group?rq=1"
+                    android:textColor="@color/color_black"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginTop="@dimen/modul_margin_tanggung">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="05:00 PM"
+                    android:textColor="@color/color_black"/>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="https://stackoverflow.com/questions/3576507/is-it-possible-to-change-the-radio-button-icon-in-an-android-radio-button-group?rq=1"
+                    android:textColor="@color/color_black"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginTop="@dimen/modul_margin_tanggung">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="05:00 PM"
+                    android:textColor="@color/color_black"/>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="https://stackoverflow.com/questions/3576507/is-it-possible-to-change-the-radio-button-icon-in-an-android-radio-button-group?rq=1"
+                    android:textColor="@color/color_black"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginTop="@dimen/modul_margin_tanggung">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="05:00 PM"
+                    android:textColor="@color/color_black"/>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="https://stackoverflow.com/questions/3576507/is-it-possible-to-change-the-radio-button-icon-in-an-android-radio-button-group?rq=1"
+                    android:textColor="@color/color_black"/>
+
+            </LinearLayout>-->
+        </LinearLayout>
+
+    </RelativeLayout>
+
+</FrameLayout>
