@@ -1,10 +1,7 @@
 package id.net.gmedia.gmedialiveconnection.MainTroubleAnalytic.Fragment;
 
 import android.app.Activity;
-import android.app.ActivityManager;
 import android.content.Context;
-import android.net.TrafficStats;
-import android.net.Uri;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.design.widget.Snackbar;
@@ -18,10 +15,6 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.github.anastr.speedviewlib.PointerSpeedometer;
-import com.jjoe64.graphview.GraphView;
-import com.jjoe64.graphview.Viewport;
-import com.jjoe64.graphview.series.DataPoint;
-import com.jjoe64.graphview.series.LineGraphSeries;
 import com.maulana.custommodul.ApiVolley;
 import com.maulana.custommodul.ItemValidation;
 import com.maulana.custommodul.SessionManager;
@@ -30,9 +23,6 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.math.BigDecimal;
-import java.text.DecimalFormat;
-import java.util.List;
-import java.util.Random;
 
 import fr.bmartel.speedtest.SpeedTestReport;
 import fr.bmartel.speedtest.SpeedTestSocket;
@@ -44,8 +34,6 @@ import id.net.gmedia.gmedialiveconnection.NotificationUtils.InitFirebaseSetting;
 import id.net.gmedia.gmedialiveconnection.R;
 import id.net.gmedia.gmedialiveconnection.utils.ServerUrl;
 
-import static android.content.Context.ACTIVITY_SERVICE;
-
 public class MainBandwidthTest extends Fragment {
 
 	private Context context;
@@ -54,8 +42,8 @@ public class MainBandwidthTest extends Fragment {
 	private static ItemValidation ivStatic = new ItemValidation();
 	private int i;
 	private Button btnProses;
-	private static TextView tvUpload, tvDownload;
-	private static PointerSpeedometer psTest;
+	private static TextView tvUpload, tvDownload,txtBandwidthTest;
+//	private static PointerSpeedometer psTest;
 	private static float maxLenth = 10;
 	public static boolean isBandwitchTest = false;
 
@@ -112,11 +100,12 @@ public class MainBandwidthTest extends Fragment {
 
 		tvUpload = (TextView) layout.findViewById(R.id.tv_upload);
 		tvDownload = (TextView) layout.findViewById(R.id.tv_download);
-		psTest = (PointerSpeedometer) layout.findViewById(R.id.ps_test);
+//		psTest = (PointerSpeedometer) layout.findViewById(R.id.ps_test);
 //		txtProcess = (TextView) layout.findViewById(R.id.txtProcessMainPing);
 //		layoutAngkaTraffic = (LinearLayout) layout.findViewById(R.id.layoutAngkaTraffic);
 		btnProses = (Button) layout.findViewById(R.id.btn_proses);
-		psTest.speedTo(0);
+		txtBandwidthTest=(TextView)layout.findViewById(R.id.txtBandwidthTest);
+//		psTest.speedTo(0);
 
 	}
 
@@ -177,7 +166,7 @@ public class MainBandwidthTest extends Fragment {
 		ApiVolley request = new ApiVolley(context, jBody, "POST", ServerUrl.UrlBandwitchTest + MainTroubleAnalytic.idListRouter, 0, new ApiVolley.VolleyCallback() {
 			@Override
 			public void onSuccess(String result) {
-				psTest.speedTo(0);
+//				psTest.speedTo(0);
 //				txtProcess.setVisibility(View.GONE);
 //				layoutAngkaTraffic.setVisibility(View.VISIBLE);
 				isBandwitchTest = false;
@@ -189,8 +178,9 @@ public class MainBandwidthTest extends Fragment {
 						JSONObject response = object.getJSONObject("response");
 						tvDownload.setText(response.getString("download") + " Mb/s");
 						tvUpload.setText(response.getString("upload") + " Mb/s");
+						txtBandwidthTest.setText("0");
 					} else {
-						psTest.speedTo(0);
+//						psTest.speedTo(0);
 						Snackbar.make(((Activity) context).findViewById(android.R.id.content), message, Snackbar.LENGTH_LONG).show();
 					}
 				} catch (JSONException e) {
@@ -200,7 +190,7 @@ public class MainBandwidthTest extends Fragment {
 
 			@Override
 			public void onError(String result) {
-				psTest.speedTo(0);
+//				psTest.speedTo(0);
 				isBandwitchTest = false;
 				Snackbar.make(((Activity) context).findViewById(android.R.id.content), "Terjadi kesalahan koneksi, harap ulangi kembali nanti", Snackbar.LENGTH_LONG).show();
 			}
@@ -215,9 +205,10 @@ public class MainBandwidthTest extends Fragment {
 				if (!download.equals("")) {
 //					txtProcess.setText("Process download");
 					tvDownload.setText("Processing...");
-					psTest.setUnit("Mb/s");
-					psTest.setMaxSpeed(ivStatic.parseNullFloat(download) + 10f);
-					psTest.speedTo(ivStatic.parseNullFloat(download), 1000);
+					txtBandwidthTest.setText(download);
+//					psTest.setUnit("Mb/s");
+//					psTest.setMaxSpeed(ivStatic.parseNullFloat(download) + 10f);
+//					psTest.speedTo(ivStatic.parseNullFloat(download), 1000);
 					/*psTest.setUnit("Mb/s");
 					psTest.setMaxSpeed(200);
 					psTest.speedTo(150,10000);*/
@@ -225,8 +216,9 @@ public class MainBandwidthTest extends Fragment {
 			} else if (type.equals("transisi")) {
 				if (!resultDownload.equals("0")) {
 					tvDownload.setText(resultDownload + " Mb/s");
+					txtBandwidthTest.setText("0");
 				}
-				psTest.speedTo(0);
+//				psTest.speedTo(0);
 			} else if (type.equals("upload")) {
 				if (!upload.equals("")) {
 					if (!resultDownload.equals("0")) {
@@ -235,9 +227,10 @@ public class MainBandwidthTest extends Fragment {
 //					psTest.speedTo(0);
 //					txtProcess.setText("Process upload");
 					tvUpload.setText("Processing...");
-					psTest.setUnit("Mb/s");
-					psTest.setMaxSpeed(ivStatic.parseNullFloat(upload) + 10f);
-					psTest.speedTo(ivStatic.parseNullFloat(upload), 1000);
+					txtBandwidthTest.setText(upload);
+//					psTest.setUnit("Mb/s");
+//					psTest.setMaxSpeed(ivStatic.parseNullFloat(upload) + 10f);
+//					psTest.speedTo(ivStatic.parseNullFloat(upload), 1000);
 					/*psTest.setUnit("Mb/s");
 					psTest.setMaxSpeed(200);
 					psTest.speedTo(150,10000);*/
@@ -246,7 +239,7 @@ public class MainBandwidthTest extends Fragment {
 				if (!resultDownload.equals("0")) {
 					tvDownload.setText(resultDownload + " Mb/s");
 				}
-				psTest.speedTo(0);
+//				psTest.speedTo(0);
 			}
 		}
 
@@ -274,9 +267,9 @@ public class MainBandwidthTest extends Fragment {
 						@Override
 						public void run() {
 
-							psTest.setUnit(getUnit(report.getTransferRateBit()));
+							/*psTest.setUnit(getUnit(report.getTransferRateBit()));
 							psTest.setMaxSpeed(getSpeed(report.getTransferRateBit()) + 10);
-							psTest.speedTo(getSpeed(report.getTransferRateBit()));
+							psTest.speedTo(getSpeed(report.getTransferRateBit()));*/
 
 							tvDownload.setText(iv.floatToString(getSpeed(report.getTransferRateBit())) + " " + getUnit(report.getTransferRateBit()));
 							tvUpload.setText("");
@@ -302,10 +295,10 @@ public class MainBandwidthTest extends Fragment {
 						public void run() {
 
 							maxLenth = getSpeed(downloadReport.getTransferRateBit()) + 10;
-							psTest.setMaxSpeed(maxLenth);
-							psTest.setLowSpeedPercent(10);
-							psTest.setUnit(getUnit(downloadReport.getTransferRateBit()));
-							psTest.speedTo(getSpeed(downloadReport.getTransferRateBit()), durationSpeed);
+//							psTest.setMaxSpeed(maxLenth);
+//							psTest.setLowSpeedPercent(10);
+//							psTest.setUnit(getUnit(downloadReport.getTransferRateBit()));
+//							psTest.speedTo(getSpeed(downloadReport.getTransferRateBit()), durationSpeed);
 
 							tvDownload.setText("Processing...");
 							tvUpload.setText("");
@@ -345,12 +338,12 @@ public class MainBandwidthTest extends Fragment {
 						@Override
 						public void run() {
 
-							psTest.setUnit(getUnit(report.getTransferRateBit()));
+							/*psTest.setUnit(getUnit(report.getTransferRateBit()));
 							psTest.setMaxSpeed(getSpeed(report.getTransferRateBit()) + 10);
 							psTest.speedTo(getSpeed(report.getTransferRateBit()));
 
 							tvUpload.setText(iv.floatToString(getSpeed(report.getTransferRateBit())) + " " + getUnit(report.getTransferRateBit()));
-							psTest.speedTo(0);
+							psTest.speedTo(0);*/
 						}
 					});
 				}
@@ -369,10 +362,10 @@ public class MainBandwidthTest extends Fragment {
 						public void run() {
 
 							maxLenth = getSpeed(downloadReport.getTransferRateBit()) + 10;
-							psTest.setMaxSpeed(maxLenth);
+							/*psTest.setMaxSpeed(maxLenth);
 							psTest.setLowSpeedPercent(10);
 							psTest.setUnit(getUnit(downloadReport.getTransferRateBit()));
-							psTest.speedTo(getSpeed(downloadReport.getTransferRateBit()), durationSpeed);
+							psTest.speedTo(getSpeed(downloadReport.getTransferRateBit()), durationSpeed);*/
 
 							// Get running processes
                             /*long txBytes = TrafficStats.getTotalRxBytes() - mStartTX;

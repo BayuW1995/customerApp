@@ -16,8 +16,31 @@
             android:layout_height="wrap_content"
             android:orientation="vertical"
             android:padding="@dimen/modul_margin_default">
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:gravity="bottom"
+                android:orientation="horizontal">
 
-            <RelativeLayout
+                <TextView
+                    android:id="@+id/txtBandwidthTest"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="0"
+                    android:textColor="@color/color_default"
+                    android:textSize="80sp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/modul_margin_default"
+                    android:text="Mb/s"
+                    android:textColor="@color/color_default"
+                    android:textSize="30sp" />
+
+            </LinearLayout>
+            <!--<RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_marginTop="@dimen/activity_vertical_margin">
@@ -30,7 +53,7 @@
                     app:sv_unit=""
                     app:sv_withTremble="false" />
 
-            </RelativeLayout>
+            </RelativeLayout>-->
 
             <LinearLayout
                 android:layout_width="match_parent"
