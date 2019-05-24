@@ -12,6 +12,9 @@ import android.widget.LinearLayout;
 import android.widget.Spinner;
 import android.widget.TextView;
 
+import com.maulana.custommodul.FormatItem;
+import com.maulana.custommodul.ItemValidation;
+
 import java.util.List;
 
 import id.net.gmedia.gmedialiveconnection.R;
@@ -19,6 +22,7 @@ import id.net.gmedia.gmedialiveconnection.R;
 public class ListAdapterMenuComplaint extends ArrayAdapter {
 	private Context context;
 	private List<ModelMenuComplaint> list;
+	private ItemValidation iv = new ItemValidation();
 
 	public ListAdapterMenuComplaint(Context context, List<ModelMenuComplaint> list) {
 		super(context, R.layout.view_lv_complaint, list);
@@ -60,7 +64,8 @@ public class ListAdapterMenuComplaint extends ArrayAdapter {
 			holder = (ViewHolder) convertView.getTag();
 		}
 		ModelMenuComplaint model = list.get(position);
-		holder.tanggal.setText(model.getTanggal());
+		holder.tanggal.setText(iv.ChangeFormatDateString(model.getTanggal(), FormatItem.formatTimestamp,FormatItem.formatDateTime));
+//		holder.tanggal.setText(model.getTanggal());
 		holder.deskripsi.setText(model.getDeskripsi());
 		holder.status = model.getStatus();
 		if (holder.status.equals("open")) {
