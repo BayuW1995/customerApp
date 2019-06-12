@@ -151,7 +151,6 @@ public class LoginScreen extends AppCompatActivity {
 			jBody.put("username", edtUsername.getText().toString());
 			jBody.put("password", edtPassword.getText().toString());
 			jBody.put("fcm_id", InitFirebaseSetting.token);
-
 		} catch (JSONException e) {
 			e.printStackTrace();
 		}
