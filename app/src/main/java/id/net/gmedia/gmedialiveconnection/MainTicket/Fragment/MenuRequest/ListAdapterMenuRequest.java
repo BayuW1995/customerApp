@@ -7,6 +7,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.maulana.custommodul.FormatItem;
@@ -22,6 +23,7 @@ public class ListAdapterMenuRequest extends ArrayAdapter {
 	private Context context;
 	private List<ModelMenuRequest> list;
 	private ItemValidation iv = new ItemValidation();
+
 	public ListAdapterMenuRequest(Context context, List<ModelMenuRequest> list) {
 		super(context, R.layout.view_lv_request, list);
 		this.context = context;
@@ -32,6 +34,7 @@ public class ListAdapterMenuRequest extends ArrayAdapter {
 		private TextView tanggal, deskripsi;
 		private String status;
 		private ImageView imgStatus;
+		private LinearLayout layoutOpen, layoutClose;
 	}
 
 	public void addMoreData(List<ModelMenuRequest> moreData) {
@@ -57,18 +60,24 @@ public class ListAdapterMenuRequest extends ArrayAdapter {
 			holder.tanggal = (TextView) convertView.findViewById(R.id.txtTglMenuRequest);
 			holder.deskripsi = (TextView) convertView.findViewById(R.id.txtDeskripsiMenuRequest);
 			holder.imgStatus = (ImageView) convertView.findViewById(R.id.imgStatusMenuRequest);
+			holder.layoutOpen = (LinearLayout) convertView.findViewById(R.id.layout_open_lv_request);
+			holder.layoutClose = (LinearLayout) convertView.findViewById(R.id.layout_close_lv_request);
 			convertView.setTag(holder);
 		} else {
 			holder = (ViewHolder) convertView.getTag();
 		}
 		ModelMenuRequest model = list.get(position);
-		holder.tanggal.setText(iv.ChangeFormatDateString(model.getTanggal(), FormatItem.formatTimestamp,FormatItem.formatDateTime));
+		holder.tanggal.setText(iv.ChangeFormatDateString(model.getTanggal(), FormatItem.formatTimestamp, FormatItem.formatDateTime));
 		holder.deskripsi.setText(model.getDeskripsi());
 		holder.status = model.getStatus();
 		if (holder.status.equals("open")) {
 			holder.imgStatus.setImageResource(R.drawable.ic_on_progres);
+			holder.layoutOpen.setVisibility(View.VISIBLE);
+			holder.layoutClose.setVisibility(View.GONE);
 		} else {
 			holder.imgStatus.setImageResource(R.drawable.ic_solve);
+			holder.layoutClose.setVisibility(View.VISIBLE);
+			holder.layoutOpen.setVisibility(View.GONE);
 		}
 		return convertView;
 	}

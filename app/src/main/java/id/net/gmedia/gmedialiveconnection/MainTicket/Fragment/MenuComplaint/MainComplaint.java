@@ -17,6 +17,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AbsListView;
+import android.widget.AdapterView;
 import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.ImageView;
@@ -304,6 +305,16 @@ public class MainComplaint extends Fragment {
 						listView.setAdapter(null);
 						adapter = new ListAdapterMenuComplaint(context, list);
 						listView.setAdapter(adapter);
+						listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+							@Override
+							public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+								final Dialog dialog = new Dialog(context);
+								dialog.setContentView(R.layout.popup_rating_bar);
+								dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
+								dialog.setCanceledOnTouchOutside(false);
+								dialog.show();
+							}
+						});
 						listView.setVisibility(View.VISIBLE);
 						imageNoData.setVisibility(View.GONE);
 						txtNoData.setVisibility(View.GONE);
